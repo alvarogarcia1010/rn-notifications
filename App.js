@@ -24,8 +24,14 @@ export default function App() {
       })
       .then(statusObj => {
         if(statusObj.status !== 'granted'){
-          return;
+          throw new Error("Permission not granted!");
         }
+      })
+      .then(()=> {
+
+      })
+      .catch(error => {
+        return null
       })
   }, [])
 
